@@ -19,8 +19,15 @@ Audient-Health-Email-Signatures/
 ├── README.md
 ├── signatures.html              # Template signature file
 ├── StefaniaRucci.html          # Individual signature example
-├── audient_health_logo.png     # Company logo (full version)
-└── email_audient_logo.png      # Company logo (email-optimised version)
+├── logo/
+│   └── email_audient_logo.png  # Company logo (email-optimised version)
+└── icons/
+    ├── phone-icon-dark-2x.webp
+    ├── email-icon-dark-2x.webp
+    ├── link-icon-dark-2x.webp
+    ├── address-icon-dark-2x.webp
+    ├── linkedin-icon-dark-2x.webp
+    └── x-icon-dark-2x.webp
 ```
 
 ## Features
@@ -60,9 +67,11 @@ To create a new signature for a team member:
 
 ### Image Requirements
 
-- Ensure `email_audient_logo.png` is accessible (either hosted online or embedded as base64)
-- For best compatibility, host images on a reliable server or use base64 encoding
-- Current logo references a local file: `email_audient_logo.png`
+- All images (logo and icons) are hosted on GitHub using raw.githubusercontent.com
+- Images are referenced using commit-specific URLs for version control:
+  - Logo: `https://raw.githubusercontent.com/Direct-Design-Studio/Audient-Health-Email-Signatures/bb6b43ed5de045e458e6400acf3605c80ebf86d9/logo/email_audient_logo.png`
+  - Icons: `https://raw.githubusercontent.com/Direct-Design-Studio/Audient-Health-Email-Signatures/bb6b43ed5de045e458e6400acf3605c80ebf86d9/icons/[icon-name].webp`
+- Using commit-specific URLs ensures images remain stable even if the repository structure changes
 
 ## Technical Details
 
@@ -87,8 +96,11 @@ The signatures use nested table layouts for maximum email client compatibility:
 
 ### External Dependencies
 
-- Icons are loaded from HubSpot CDN (phone, email, website, address, social media icons)
-- Logo should be hosted or embedded locally
+- **Icons**: All icons (phone, email, website, address, LinkedIn, X/Twitter) are loaded from GitHub raw URLs:
+  - Base URL: `https://raw.githubusercontent.com/Direct-Design-Studio/Audient-Health-Email-Signatures/bb6b43ed5de045e458e6400acf3605c80ebf86d9/icons/`
+- **Logo**: Company logo is hosted on GitHub raw URLs:
+  - URL: `https://raw.githubusercontent.com/Direct-Design-Studio/Audient-Health-Email-Signatures/bb6b43ed5de045e458e6400acf3605c80ebf86d9/logo/email_audient_logo.png`
+- All images use commit-specific URLs to ensure stability and version control
 
 ## Customisation
 
@@ -108,10 +120,11 @@ Each contact field is a table row (`<tr>`) within the contact information sectio
 
 ## Notes
 
-- **Image Hosting**: For production use, consider hosting the logo on a CDN or company server rather than using local file paths
+- **Image Hosting**: All images (logo and icons) are hosted on GitHub using raw.githubusercontent.com with commit-specific URLs. This ensures images remain accessible and version-controlled. If you need to update images, commit the changes and update the commit hash in the signature HTML files.
 - **Testing**: Always test signatures in multiple email clients before deployment
 - **Legal Text**: The legal disclaimers are specific to Audient Health Ltd. and should not be modified without legal review
 - **Opt-Out**: The signature includes GDPR-compliant opt-out instructions
+- **Icon Updates**: When updating icons, ensure the new commit hash is updated in all signature files to maintain consistency
 
 ## Support
 
